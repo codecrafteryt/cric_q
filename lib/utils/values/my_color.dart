@@ -12,6 +12,7 @@
 
   class MyColors {
     static const Color green =   Color.fromRGBO(92, 201, 138, 1);
+    static const Color btnColor =   Color.fromRGBO(68, 117, 57, 0.85);
     // Primary Colors
     static const Color primary = Color.fromRGBO(244, 181, 22, 1);
     static const Color grey = Color.fromRGBO(117, 120, 141, 1);

@@ -1,8 +1,19 @@
+/*
+    ---------------------------------------
+    Project: Plinkos Puzzle Game Mobile Application
+    Date: March 29, 2024
+    Author: Ameer from Pakistan
+    ---------------------------------------
+    Description: here all custom colors
+  */
   import 'dart:async';
   import 'package:cric_q/utils/extensions/extentions.dart';
-import 'package:cric_q/utils/values/my_color.dart' show MyColors;
+  import 'package:cric_q/utils/values/my_color.dart' show MyColors;
+  import 'package:cric_q/view/menu/menu_screen.dart';
   import 'package:flutter/material.dart';
   import 'package:flutter_screenutil/flutter_screenutil.dart';
+  import 'package:get/get_core/src/get_main.dart';
+  import 'package:get/get_navigation/get_navigation.dart';
 
   class SplashScreen extends StatefulWidget {
     const SplashScreen({super.key});
@@ -30,7 +41,7 @@ import 'package:cric_q/utils/values/my_color.dart' show MyColors;
           timer.cancel();
           Future.delayed(const Duration(milliseconds: 200), () {
             if (mounted) {
-              // Get.offAll(() => MenuScreen());
+              Get.offAll(() => MenuScreen());
             }
           });
         }
@@ -46,8 +57,9 @@ import 'package:cric_q/utils/values/my_color.dart' show MyColors;
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                MyColors.white,
+                Colors.lightGreenAccent,
                 MyColors.green,
+                Colors.green.shade900,
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -58,7 +70,7 @@ import 'package:cric_q/utils/values/my_color.dart' show MyColors;
             children: [
               10.sbh,
               Image.asset(
-                'assets/images/app_icon.png',
+                'assets/images/logo.png',
                 width: 324.w,
                 height: 328.h,
                 fit: BoxFit.contain,
@@ -67,12 +79,12 @@ import 'package:cric_q/utils/values/my_color.dart' show MyColors;
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 50.w),
                 child: LinearProgressIndicator(
-                  minHeight: 7,
+                  minHeight: 23,
                   value: progress,
                   valueColor: const AlwaysStoppedAnimation<Color>(
-                    Color.fromRGBO(63, 218, 104, 1),
+                    MyColors.green,
                   ),
-                  backgroundColor: const Color.fromRGBO(224, 247, 130, 1),
+                  backgroundColor: MyColors.white,
                 ),
               ),
             ],

@@ -1,8 +1,23 @@
-  import 'package:cric_q/view/widgets/custom_button.dart';
+/*
+    ---------------------------------------
+    Project: Plinkos Puzzle Game Mobile Application
+    Date: March 29, 2024
+    Author: Ameer from Pakistan
+    ---------------------------------------
+    Description: here all custom colors
+  */
+  import 'package:cric_q/utils/extensions/extentions.dart';
+import 'package:cric_q/utils/values/style.dart';
+import 'package:cric_q/view/widgets/custom_button.dart';
   import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
   import '../../utils/values/my_color.dart' show MyColors;
-  class QuizHomeScreen extends StatelessWidget {
-    const QuizHomeScreen({Key? key}) : super(key: key);
+import '../quiz/quiz_selection_screen.dart';
+import '../top_matches/top_matches_screen.dart';
+  class MenuScreen extends StatelessWidget {
+    const MenuScreen({Key? key}) : super(key: key);
 
     @override
     Widget build(BuildContext context) {
@@ -10,11 +25,12 @@
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                MyColors.white,
+                Colors.lightGreenAccent,
                 MyColors.green,
+                Colors.green.shade900,
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -23,97 +39,54 @@
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo Container
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF0E8572),
-                  borderRadius: BorderRadius.circular(30),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Magnifying Glass
-                    Transform.rotate(
-                      angle: 45 * (3.14159 / 180),
-                      child: Container(
-                        width: 80,
-                        height: 80,
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 15,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF00574B),
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                  color: const Color(0xFFFFF9C4),
-                                  width: 2,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(left: 25, top: 0),
-                              width: 8,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF00574B),
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                  color: const Color(0xFFFFF9C4),
-                                  width: 2,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    // Question Mark
-                    Positioned(
-                      right: 0,
-                      child: Text(
-                        "?",
-                        style: TextStyle(
-                          fontSize: 70,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xFFFFF9C4),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              Image.asset(
+                'assets/images/logo.png',
+                width: 324.w,
+                height: 328.h,
+                fit: BoxFit.contain,
               ),
-              const SizedBox(height: 60),
-
-              // Buttons Section
+              68.sbh,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Column(
                   children: [
-                    // Quiz Button
                     CustomButton(
                       text: "QUIZ",
-                      onPressed: (){},
+                      height: 64.h,
+                      width: 255.w,
+                      textStyle: kSize18DarkW800Text.copyWith(
+                        color: MyColors.white,
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      onPressed: (){
+                        Get.to(() => QuizSelectionScreen(),);
+                      },
                     ),
-                    const SizedBox(height: 15),
-
-                    // Top 5 Matches Button
-                    CustomButton(text: "Top 5 Matches",
-                      onPressed: (){},
+                    14.sbh,
+                    CustomButton(
+                      text: "Top 5 Matches",
+                      height: 64.h,
+                      width: 255.w,
+                      textStyle: kSize18DarkW800Text.copyWith(
+                        color: MyColors.white,
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      onPressed: (){
+                        Get.to(() => TopMatchesScreen(),);
+                      },
                     ),
-                    const SizedBox(height: 30),
-
-                    // Options Button
-                    CustomButton(text: "Options",
+                    60.sbh,
+                    CustomButton(
+                      text: "Options",
+                      height: 64.h,
+                      width: 139.w,
+                      textStyle: kSize18DarkW800Text.copyWith(
+                        color: MyColors.white,
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
                       onPressed: (){},
                     ),
                   ],
