@@ -1,3 +1,7 @@
+import 'package:cric_q/view/quiz/quiz1_screen/quiz1_screen.dart';
+import 'package:cric_q/view/quiz/quiz2_screen/quiz2_screen.dart';
+import 'package:cric_q/view/quiz/quiz3_screen/quiz3_screen.dart';
+import 'package:cric_q/view/quiz/quiz4_screen/quiz4_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,7 +33,7 @@ class QuizLevelController extends GetxController {
     currentQuestionIndex.value = 0;
     selectedAnswer.value = -1;
     correctAnswersCount.value = 0;
-    pageController.dispose();
+    //pageController.dispose();
   }
   // Questions for Quiz 1
   final questionsForQuiz1 = [
@@ -192,6 +196,7 @@ class QuizLevelController extends GetxController {
     // Quiz 1 is always unlocked
     quizUnlocked[0] = true;
 
+
     // Check if each quiz is unlocked (a quiz is unlocked if the previous one is completed)
     for (int i = 2; i <= 4; i++) {
       bool isPreviousCompleted = prefs.getBool('quiz_${i-1}_completed') ?? false;
@@ -205,6 +210,23 @@ class QuizLevelController extends GetxController {
   bool isAnswerCorrect() {
     return selectedAnswer.value == questions[currentQuestionIndex.value].correctAnswerIndex;
 
+  }
+
+  void navigateToQuiz(int quizNumber) {
+    switch (quizNumber) {
+      case 1:
+        Get.to(() => Quiz1Screen());
+        break;
+      case 2:
+        Get.to(() => Quiz2Screen());
+        break;
+      case 3:
+        Get.to(() => Quiz3Screen());
+        break;
+      case 4:
+        Get.to(() => Quiz4Screen());
+        break;
+    }
   }
 
   /// Store quiz result and completion status in SharedPreferences

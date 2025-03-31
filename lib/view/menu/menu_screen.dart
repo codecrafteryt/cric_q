@@ -8,6 +8,7 @@
   */
   import 'package:cric_q/utils/extensions/extentions.dart';
 import 'package:cric_q/utils/values/style.dart';
+import 'package:cric_q/view/options/option_screen.dart';
 import 'package:cric_q/view/widgets/custom_button.dart';
   import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,7 +88,9 @@ import '../top_matches/top_matches_screen.dart';
                         fontSize: 30.sp,
                         fontWeight: FontWeight.w400,
                       ),
-                      onPressed: (){},
+                      onPressed: (){
+                        OptionPopup.showOptionPopup(context);
+                      },
                     ),
                   ],
                 ),

@@ -120,6 +120,7 @@ class Quiz1ResultScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                   onPressed: () {
+                    controller.loadQuestionsForLevel(2);
                     Get.to(() => MenuScreen());
                     controller.onClose();
                   },

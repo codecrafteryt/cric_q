@@ -36,6 +36,7 @@ class Quiz1Screen extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 50.h),
+
                 child: Container(
                   padding: EdgeInsets.all(10.w),
                   decoration: BoxDecoration(
@@ -55,7 +56,7 @@ class Quiz1Screen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+             20.sbh,
               ...List.generate(question.options.length, (index) {
                 return GestureDetector(
                   onTap: () {

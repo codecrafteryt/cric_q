@@ -1,3 +1,4 @@
+import 'package:cric_q/controller/quiz_level_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,7 @@ class QuizSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Initialize the controller
-    final QuizSelectionController controller = Get.put(QuizSelectionController());
+    final QuizLevelController controller = Get.find();
 
     return Scaffold(
       body: Container(
