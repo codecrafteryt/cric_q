@@ -1,4 +1,4 @@
-package com.example.cric_q
+package com.cricketquizandtop.cricq
 
 import io.flutter.embedding.android.FlutterActivity
 
